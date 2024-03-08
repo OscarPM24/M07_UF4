@@ -10,17 +10,31 @@
     {% block content %}
 
     <h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
-    <ul>
-        {% for usr in users %}
-        <li>Nom: {{ usr.nom }}</li>
-        <li>Cognoms: {{ usr.cognom1 }} {{ usr.cognom2 }}</li>
-        <li>Correu: {{ usr.correu }}</li>
-        <li>Curs: {{ usr.curs }}</li>
-        <li>Moduls: {{ usr.moduls }}</li>
-        <br><br>
-        {% endfor %}
-    </ul>
 
+    <table>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOMS</th>
+            <th>CORREU</th>
+            <th>CURS</th>
+            <th>TUTOR</th>
+            <th>MODULS</th>
+        </tr>
+
+
+        {% for usr in users %}
+        <tr>
+            <td>{{ usr.nom }}</td>
+            <td>{{ usr.cognom1 }} {{ usr.cognom2 }}</td>
+            <td>{{ usr.correu }}</td>
+            <td>{{ usr.curs }}</td>
+            <td>{{ usr.tutor | yesno:"Si, No"}}</td>
+            <td>{{ usr.moduls }}</td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
     {% endblock %}
 </body>
 </html>

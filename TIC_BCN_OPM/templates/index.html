@@ -7,8 +7,8 @@
 <body>
     <h1>INDEX</h1>
 
-    <a href="teachers">PROFESSORS</a>
-    <a href="students">ALUMNES</a>
+    <a href="{% url 'teachers' %}">PROFESSORS</a>
+    <a href="{% url 'students' %}">ALUMNES</a>
 
     {% block content %}
 
