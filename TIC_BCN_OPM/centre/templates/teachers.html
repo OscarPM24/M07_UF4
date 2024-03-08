@@ -5,6 +5,22 @@
     <title>TEACHERS</title>
 </head>
 <body>
+
+    {% extends 'index.html' %}
+    {% block content %}
+
     <h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+    <ul>
+        {% for usr in users %}
+        <li>Nom: {{ usr.nom }}</li>
+        <li>Cognoms: {{ usr.cognom1 }} {{ usr.cognom2 }}</li>
+        <li>Correu: {{ usr.correu }}</li>
+        <li>Curs: {{ usr.curs }}</li>
+        <li>Moduls: {{ usr.moduls }}</li>
+        <br><br>
+        {% endfor %}
+    </ul>
+
+    {% endblock %}
 </body>
 </html>
