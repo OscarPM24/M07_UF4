@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'index.html')
 
 def teachers(request):
-    users = [
+    teachers = [
         {
             'id': 1,
             'nom': 'Roger',
@@ -49,14 +49,17 @@ def teachers(request):
             'moduls': 'M09'
         }
     ]
-    context = {'users': users}
+    context = {'teachers': teachers}
     return render(request, 'teachers.html', context)
 
 def teacher(request, pk):
-    print('hola')
-
+    teacher_obj = None
+    for i in teachers:
+        if i['id'] == pk:
+            book_obj = i
+    return render(request, 'book.html', {books: book_obj})
 def students(request):
-    users = [
+    students = [
         {
             'id': 1,
             'nom': 'Oscar',
@@ -173,7 +176,7 @@ def students(request):
             'nom': 'Jesus',
             'cognom1': 'Pujada',
             'cognom2': 'Montoya',
-            'correu': 'jesus@iticbcn.cat',
+            'correu': 'oriana@iticbcn.cat',
             'curs': 'DAW2A',
             'moduls': 'M06, M07, M08, M09, MAH'
         }
@@ -227,6 +230,6 @@ def students(request):
             'moduls': 'M06, M07, M08, M09, MAH'
         }
     ]
-    context = {'users': users}
+    context = {'students': students}
     return render(request, 'students.html', context)
 

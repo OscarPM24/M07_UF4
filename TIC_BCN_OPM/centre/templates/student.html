@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TEACHERS</title>
+    <title>Student</title>
 </head>
 <body>
 
     {% extends 'index.html' %}
     {% block content %}
-
-    <h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
 
     <table>
         <tr>
@@ -22,20 +20,19 @@
         </tr>
 
 
-        {% for usr in teachers %}
         <tr>
-            <td>{{ usr.nom }}</td>
-            <td>{{ usr.cognom1 }} {{ usr.cognom2 }}</td>
-            <td>{{ usr.correu }}</td>
-            <td>{{ usr.curs }}</td>
-            <td>{{ usr.tutor | yesno:"Si, No"}}</td>
-            <td>{{ usr.moduls }}</td>
+            <td>{{ teachers.nom }}</td>
+            <td>{{ teachers.cognom1 }} {{ teachers.cognom2 }}</td>
+            <td>{{ teachers.correu }}</td>
+            <td>{{ teachers.curs }}</td>
+            <td>{{ teachers.tutor | yesno:"Si, No"}}</td>
+            <td>{{ teachers.moduls }}</td>
             <td><a href="{% url 'teacher' usr.id %}">+ INFO</a></td>
         </tr>
-        {% endfor %}
-
-
     </table>
+
+    <a href="{% url 'teachers' %}"></a>
     {% endblock %}
+
 </body>
 </html>
