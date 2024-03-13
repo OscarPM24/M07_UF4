@@ -15,8 +15,6 @@
             <th>NOM</th>
             <th>COGNOMS</th>
             <th>CORREU</th>
-            <th>CURS</th>
-            <th>MODULS</th>
         </tr>
 
 
@@ -25,8 +23,7 @@
             <td>{{ usr.nom }}</td>
             <td>{{ usr.cognom1 }} {{ usr.cognom2 }}</td>
             <td>{{ usr.correu }}</td>
-            <td>{{ usr.curs }}</td>
-            <td>{{ usr.moduls }}</td>
+            <td><a href="{% url 'student' usr.id %}">+ INFO</a></td>
         </tr>
         {% endfor %}
 

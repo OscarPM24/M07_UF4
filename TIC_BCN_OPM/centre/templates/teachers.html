@@ -16,9 +16,6 @@
             <th>NOM</th>
             <th>COGNOMS</th>
             <th>CORREU</th>
-            <th>CURS</th>
-            <th>TUTOR</th>
-            <th>MODULS</th>
         </tr>
 
 
@@ -27,9 +24,6 @@
             <td>{{ usr.nom }}</td>
             <td>{{ usr.cognom1 }} {{ usr.cognom2 }}</td>
             <td>{{ usr.correu }}</td>
-            <td>{{ usr.curs }}</td>
-            <td>{{ usr.tutor | yesno:"Si, No"}}</td>
-            <td>{{ usr.moduls }}</td>
             <td><a href="{% url 'teacher' usr.id %}">+ INFO</a></td>
         </tr>
         {% endfor %}
