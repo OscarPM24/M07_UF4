@@ -1,4 +1,4 @@
-# M07_UF4
+# M07_UF4 PRACTICA 1
 
 ## Part 1
 
@@ -15,3 +15,17 @@ Imatge Students
 
 Vídeo Funcionament
 https://drive.google.com/file/d/1HMTr1wpXoU8QD-VwSrMBuAcyDOc6qfo6/view?usp=sharing
+
+# M07_UF4 PRACTICA 2
+
+## Part 1
+
+Imatges Migrations
+
+![migration1.png](img/p2/migration1.png)
+
+![migration2.png](img/p2/migration2.png)
+
+Imatge BD
+
+![bd.png](img/p2/bd.png)
