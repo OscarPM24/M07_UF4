@@ -29,3 +29,6 @@ Imatges Migrations
 Imatge BD
 
 ![bd.png](img/p2/bd.png)
+
+Video Funcionament
+https://drive.google.com/file/d/1dKFlvq0ATK4Kfl_nK5THbSxbtAOecNPY/view?usp=sharing
