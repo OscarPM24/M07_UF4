@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEACHERS</title>
+</head>
+<body>
+
+    {% extends 'index.html' %}
+    {% block content %}
+
+    <h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+
+    <table>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOMS</th>
+            <th>CORREU</th>
+        </tr>
+
+
+        {% for usr in teachers %}
+        <tr>
+            <td>{{ usr.nom }}</td>
+            <td>{{ usr.cognom1 }} {{ usr.cognom2 }}</td>
+            <td>{{ usr.correu }}</td>
+            <td><a href="{% url 'teacher' usr.id %}">+ INFO</a></td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+    {% endblock %}
+</body>
+</html>

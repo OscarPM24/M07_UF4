@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STUDENTS</title>
+</head>
+<body>
+
+    {% extends 'index.html' %}
+    {% block content %}
+
+    <h1>INFORMACIÓ ALUMNAT TIC BARCELONA</h1>
+    <table>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOMS</th>
+            <th>CORREU</th>
+        </tr>
+
+
+        {% for usr in students %}
+        <tr>
+            <td>{{ usr.nom }}</td>
+            <td>{{ usr.cognom1 }} {{ usr.cognom2 }}</td>
+            <td>{{ usr.correu }}</td>
+            <td><a href="{% url 'student' usr.id %}">+ INFO</a></td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<body>
+
+    {% extends 'index.html' %}
+    {% block content %}
+
+    <table>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOMS</th>
+            <th>CORREU</th>
+            <th>CURS</th>
+            <th>MODULS</th>
+        </tr>
+
+
+        <tr>
+            <td>{{ students.nom }}</td>
+            <td>{{ students.cognom1 }} {{ teachers.cognom2 }}</td>
+            <td>{{ students.correu }}</td>
+            <td>{{ students.curs }}</td>
+            <td>{{ students.moduls }}</td>
+        </tr>
+    </table>
+
+    <a href="{% url 'students' %}">Go back</a>
+    {% endblock %}
+
+</body>
+</html>
