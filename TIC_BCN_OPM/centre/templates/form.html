@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir Usuaris</title>
+</head>
+<body>
+    {% extends 'index.html' %}
+    {% block content %}
+
+    <h1>FORMULARI USUARI TIC BARCELONA</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+
+        <input type="submit">
+    </form>
+
+    {% endblock %}
+</body>
+</html>
