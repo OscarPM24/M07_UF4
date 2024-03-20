@@ -32,3 +32,13 @@ Imatge BD
 
 Video Funcionament
 https://drive.google.com/file/d/1dKFlvq0ATK4Kfl_nK5THbSxbtAOecNPY/view?usp=sharing
+
+# M07_UF4 PRACTICA 3
+
+Imatge Formulari amb as_p
+
+![form_as_p.png](img/p3/form_as_p.png)
+
+Imatge Formulari sense as_p
+
+![form_no_as_p.png](img/p3/form_no_as_p.png)

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
+from .forms import UsuariForm
 
 
 def index(request):
@@ -456,3 +457,8 @@ def student(request, pk):
         if i['id'] == pk:
             student_obj = i
     return render(request, 'student.html', {'students': student_obj})
+
+def user_form(request):
+    form = UsuariForm() # Formulari del forms.py
+    context = {'form':form}
+    return render(request, 'form.html', context)
