@@ -22,7 +22,7 @@
         {% for usr in teachers %}
         <tr>
             <td>{{ usr.nom }}</td>
-            <td>{{ usr.cognom1 }} {{ usr.cognom2 }}</td>
+            <td>{{ usr.cognoms }}</td>
             <td>{{ usr.correu }}</td>
             <td><a href="{% url 'teacher' usr.id %}">+ INFO</a></td>
         </tr>
