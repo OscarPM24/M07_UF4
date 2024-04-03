@@ -52,3 +52,13 @@ def update_user(request, pk):
 
     context = {'form': form}
     return render(request, 'form.html', context)
+
+def delete_user(request, pk):
+    user = Usuari.objects.get(id=pk)
+
+    if request.method == 'POST':
+        user.delete()
+        return redirect('index')
+
+    context = {'object':user}
+    return render(request, 'index.html', context)
