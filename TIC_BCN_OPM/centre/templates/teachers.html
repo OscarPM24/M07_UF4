@@ -25,6 +25,7 @@
             <td>{{ usr.cognoms }}</td>
             <td>{{ usr.correu }}</td>
             <td><a href="{% url 'teacher' usr.id %}">+ INFO</a></td>
+            <td><a href="{% url 'update_user' usr.id %}">EDIT</a></td>
         </tr>
         {% endfor %}
 
