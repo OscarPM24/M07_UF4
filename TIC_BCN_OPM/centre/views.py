@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render, redirect
 from .forms import UsuariForm
-
+from .models import Usuari
 
 def index(request):
     return render(request, 'index.html')
@@ -468,4 +468,17 @@ def user_form(request):
             return redirect('index')
 
     context = {'form':form}
+    return render(request, 'form.html', context)
+
+def update_user(request, pk):
+    usuari = Usuari.objects.get(id=pk)
+    form = UsuariForm(instance=usuari)
+
+    if request.method == 'POST':
+        form = UsuariForm(request.POST, instance=usuari)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+    context = {'form': form}
     return render(request, 'form.html', context)

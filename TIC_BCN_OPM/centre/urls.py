@@ -10,4 +10,5 @@ urlpatterns = [
     path('students/student/<int:pk>/', views.student, name='student'),
 
     path('form/', views.user_form, name='form'),
+    path('update_user/<int:pk>', views.update_user, name='update_user')
 ]
