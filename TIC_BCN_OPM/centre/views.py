@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import UsuariForm
 
 
@@ -460,5 +460,12 @@ def student(request, pk):
 
 def user_form(request):
     form = UsuariForm() # Formulari del forms.py
+
+    if request.method == 'POST':
+        form = UsuariForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
     context = {'form':form}
     return render(request, 'form.html', context)
