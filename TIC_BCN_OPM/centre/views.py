@@ -48,7 +48,13 @@ def update_user(request, pk):
         form = UsuariForm(request.POST, instance=usuari)
         if form.is_valid():
             form.save()
-            return redirect('index')
+
+            if usuari.rol == 'T':
+                return redirect('teachers')
+            elif usuari.rol == 'S':
+                return redirect('students')
+            else:
+                return redirect('index')
 
     context = {'form': form}
     return render(request, 'form.html', context)
