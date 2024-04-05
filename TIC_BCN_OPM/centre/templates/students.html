@@ -21,9 +21,11 @@
         {% for usr in students %}
         <tr>
             <td>{{ usr.nom }}</td>
-            <td>{{ usr.cognom1 }} {{ usr.cognom2 }}</td>
+            <td>{{ usr.cognoms }}</td>
             <td>{{ usr.correu }}</td>
             <td><a href="{% url 'student' usr.id %}">+ INFO</a></td>
+            <td><a href="{% url 'update_user' usr.id %}">EDIT</a></td>
+            <td><a href="{% url 'delete_user' usr.id %}">DELETE</a></td>
         </tr>
         {% endfor %}
 
