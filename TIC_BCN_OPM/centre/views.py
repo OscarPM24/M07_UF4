@@ -35,7 +35,11 @@ def user_form(request):
         form = UsuariForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+
+            if form['rol'].value() == 'T':
+                return redirect('teachers')
+            elif form['rol'].value() == 'S':
+                return redirect('students')
 
     context = {'form':form}
     return render(request, 'form.html', context)
@@ -53,8 +57,6 @@ def update_user(request, pk):
                 return redirect('teachers')
             elif usuari.rol == 'S':
                 return redirect('students')
-            else:
-                return redirect('index')
 
     context = {'form': form}
     return render(request, 'form.html', context)
@@ -68,8 +70,6 @@ def delete_user(request, pk):
             return redirect('teachers')
         elif usuari.rol == 'S':
             return redirect('students')
-        else:
-            return redirect('index')
 
     context = {'object':usuari}
     return render(request, 'delete_object.html', context)
