@@ -3,7 +3,7 @@
 
 <form action="" method="POST">
     {% csrf_token %}
-    <p>Segur que vols eliminar a "{{usuari.nom}} {{usuari.cognoms}}?</p>
+    <p>Segur que vols eliminar a "{{object.nom}} {{object.cognoms}}"?</p>
     <button><a href="{% url 'index' %}">TORNAR</a></button>
     <input type="submit" value="CONFIRMAR" />
 </form>
