@@ -60,11 +60,16 @@ def update_user(request, pk):
     return render(request, 'form.html', context)
 
 def delete_user(request, pk):
-    user = Usuari.objects.get(id=pk)
+    usuari = Usuari.objects.get(id=pk)
 
     if request.method == 'POST':
-        user.delete()
-        return redirect('index')
+        usuari.delete()
+        if usuari.rol == 'T':
+            return redirect('teachers')
+        elif usuari.rol == 'S':
+            return redirect('students')
+        else:
+            return redirect('index')
 
-    context = {'object':user}
-    return render(request, 'index.html', context)
+    context = {'object':usuari}
+    return render(request, 'delete_object.html', context)
